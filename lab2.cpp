@@ -244,6 +244,8 @@ class WOrGraph : public OrGraph {
                 for (int j = i + 1; j < n; j++) {
                     if (unif(re) < p) {
                         AddEdge(i + 1, j + 1, random(re));
+                    } else {
+                        adj_matr[i][j] = INF;
                     }
                 }
             }
@@ -338,6 +340,9 @@ class WNorGraph : public NorGraph {
                 for (int j = i + 1; j < n; j++) {
                     if (unif(re) < p) {
                         AddEdge(i + 1, j + 1, random(re));
+                    } else {
+                        adj_matr[i][j] = INF;
+                        adj_matr[j][i] = INF;
                     }
                 }
             }
@@ -376,6 +381,7 @@ class WNorGraph : public NorGraph {
             std::cout << "===============\n";
             for (int i = 0; i < n; i++) {
                 for (int j = 0; j < n; j++) {
+
                     std::cout << adj_matr[i][j] << " ";
                 }
                 std::cout << std::endl;
